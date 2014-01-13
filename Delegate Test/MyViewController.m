@@ -16,14 +16,23 @@
 
 - (void)viewDidLoad
 {
+    [self.textField setDelegate:self];
+    [self.textField setReturnKeyType:UIReturnKeyDone];
+    [self.textField addTarget:self
+                       action:@selector(textFieldFinished:)
+             forControlEvents:UIControlEventEditingDidEndOnExit];
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)textFieldFinished:(id)sender
+{
+    // seems like code should go here...
 }
 
 @end
